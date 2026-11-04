@@ -300,18 +300,12 @@ function ShopContent({ theme, toggleTheme }) {
         <section className="store-hero-banner">
           <div className="hero-banner-inner">
             <div className="hero-brand-showcase">
-              <div className="hero-brand-logo-wrap">
+              <div className="hero-brand-logo">
                 <img
-                  src={theme === 'dark' ? '/logo-dark.png?v=2' : '/logo.png?v=2'}
+                  src="/logo.png"
                   alt="Shop with NgrSine"
                   className="hero-brand-logo-img"
-                  onError={(e) => {
-                    if (e.target.src.indexOf('logo-dark.png') !== -1) {
-                      e.target.src = '/logo.png?v=2'
-                    }
-                  }}
                 />
-                <span className="hero-logo-ring" aria-hidden="true" />
               </div>
               <div className="hero-brand-texts">
                 <div className="hero-pill-badge">
