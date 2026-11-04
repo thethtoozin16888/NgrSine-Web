@@ -11,7 +11,7 @@ export default function Header({ theme = 'light', toggleTheme }) {
   const { totalItems, setIsCartOpen } = useCart()
   const { wishlistCount, setIsWishlistOpen } = useWishlist()
 
-  const logoSrc = theme === 'dark' ? '/logo-dark.png' : '/logo.png'
+  const logoSrc = theme === 'dark' ? '/logo-dark.png?v=2' : '/logo.png?v=2'
 
   return (
     <header className="app-header">

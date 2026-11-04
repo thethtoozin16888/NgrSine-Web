@@ -302,12 +302,12 @@ function ShopContent({ theme, toggleTheme }) {
             <div className="hero-brand-showcase">
               <div className="hero-brand-logo-wrap">
                 <img
-                  src={theme === 'dark' ? '/logo-dark.png' : '/logo.png'}
+                  src={theme === 'dark' ? '/logo-dark.png?v=2' : '/logo.png?v=2'}
                   alt="Shop with NgrSine"
                   className="hero-brand-logo-img"
                   onError={(e) => {
                     if (e.target.src.indexOf('logo-dark.png') !== -1) {
-                      e.target.src = '/logo.png'
+                      e.target.src = '/logo.png?v=2'
                     }
                   }}
                 />

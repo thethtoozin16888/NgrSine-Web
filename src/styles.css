@@ -277,6 +277,10 @@ button, input, select, textarea {
   display: block;
 }
 
+[data-theme='dark'] .brand-logo-img {
+  filter: drop-shadow(0 1px 4px rgba(221, 184, 146, 0.35));
+}
+
 .brand-logo-icon {
   width: 40px;
   height: 40px;
@@ -643,11 +647,12 @@ button, input, select, textarea {
 }
 
 [data-theme='dark'] .hero-brand-logo-img {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04));
-  border: 1.5px solid rgba(221, 184, 146, 0.4);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+  border: 1.5px solid rgba(221, 184, 146, 0.45);
   box-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.6), 0 0 20px rgba(221, 184, 146, 0.25);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
+  filter: drop-shadow(0 2px 8px rgba(221, 184, 146, 0.4));
 }
 
 .hero-brand-logo-wrap:hover .hero-brand-logo-img {
