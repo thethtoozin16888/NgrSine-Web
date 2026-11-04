@@ -5,6 +5,7 @@ import { CartProvider } from './context/CartContext.jsx'
 import { WishlistProvider, useWishlist } from './context/WishlistContext.jsx'
 import Header from './components/Header.jsx'
 import FilterBar from './components/FilterBar.jsx'
+import CategoryChips from './components/CategoryChips.jsx'
 import ProductCard from './components/ProductCard.jsx'
 import ProductModal from './components/ProductModal.jsx'
 import CartDrawer from './components/CartDrawer.jsx'
@@ -296,33 +297,69 @@ function ShopContent({ theme, toggleTheme }) {
       <Header theme={theme} toggleTheme={toggleTheme} />
 
       <main className="main-content-container">
-        {/* Store Hero Banner */}
+        {/* Store Hero Banner - International Modern Tech Redesign */}
         <section className="store-hero-banner">
-          {/* Left: Brand Logo + Shop with NgrSine + Online Store & Business */}
-          <div className="hero-brand-showcase">
-            <div className="hero-brand-logo">
-              <img
-                src="/logo.png"
-                alt="Shop with NgrSine"
-                className="hero-brand-logo-img"
-              />
+          <div className="hero-banner-inner">
+            <div className="hero-brand-showcase">
+              <div className="hero-brand-logo-wrap">
+                <img
+                  src={theme === 'dark' ? '/logo-dark.png' : '/logo.png'}
+                  alt="Shop with NgrSine"
+                  className="hero-brand-logo-img"
+                  onError={(e) => {
+                    if (e.target.src.indexOf('logo-dark.png') !== -1) {
+                      e.target.src = '/logo.png'
+                    }
+                  }}
+                />
+                <span className="hero-logo-ring" aria-hidden="true" />
+              </div>
+              <div className="hero-brand-texts">
+                <div className="hero-pill-badge">
+                  <SparklesIcon size={14} className="hero-sparkle-icon" />
+                  <span>Official Tech Store • {allProductsCatalog.length || 207}+ Items</span>
+                </div>
+                <h1 className="hero-brand-title">Shop with NgrSine</h1>
+                <p className="hero-brand-tagline">
+                  Gaming Gear, Custom Keyboards & Curated Tech Accessories
+                </p>
+                <p className="hero-subtext">
+                  အရည်အသွေးမြင့် ကုန်ပစ္စည်းများကို အာမခံချက်အပြည့်ဖြင့် Royal Express ဖြင့် အိမ်တိုင်ရာရောက် ပို့ဆောင်ပေးပါသည်
+                </p>
+              </div>
             </div>
-            <div className="hero-brand-texts">
-              <h2 className="hero-brand-title">Shop with NgrSine</h2>
-              <span className="hero-brand-tagline">Online Store & Business</span>
-            </div>
-          </div>
 
-          {/* Right: Welcome Heading + Description + Delivery Policy Badge */}
-          <div className="hero-right-info">
-            <h1 className="hero-heading">
-              <SparklesIcon size={24} className="hero-sparkle-icon" /> Online Shop မှ ကြိုဆိုပါသည်
-            </h1>
-            <p className="hero-subtext">{currentStore.description}</p>
-            <div className="hero-badge-pill">
-              <span>
-                <TruckIcon size={16} /> <b>Royal Express</b> ရောက်သည့်မြို့တိုင်း အိမ်ရောက်ငွေချေရပါသည်
-              </span>
+            {/* Right: Modern Trust Badges */}
+            <div className="hero-trust-badges">
+              <div className="hero-badge-pill" title="မြန်မာတစ်နိုင်ငံလုံး အိမ်ရောက်ငွေချေ ရရှိပါသည်">
+                <div className="pill-icon-wrap"><TruckIcon size={16} /></div>
+                <div className="pill-text-wrap">
+                  <span className="pill-title">Royal Express COD</span>
+                  <span className="pill-desc">မြို့ပေါင်း ၁၀၀+ အိမ်ရောက်ငွေချေ</span>
+                </div>
+              </div>
+
+              <div className="hero-badge-pill" title="စစ်မှန်သော အရည်အသွေး အာမခံ">
+                <div className="pill-icon-wrap"><PackageIcon size={16} /></div>
+                <div className="pill-text-wrap">
+                  <span className="pill-title">100% Authentic Quality</span>
+                  <span className="pill-desc">စစ်မှန်သော ပစ္စည်းများသာ</span>
+                </div>
+              </div>
+
+              <a
+                href="https://t.me/mark03168_bot"
+                target="_blank"
+                rel="noreferrer"
+                className="hero-badge-pill telegram-pill"
+                title="စုံစမ်းမေးမြန်းမှုများအတွက် ၂၄ နာရီ မေးမြန်းနိုင်ပါသည်"
+              >
+                <div className="pill-icon-wrap"><TelegramIcon size={16} /></div>
+                <div className="pill-text-wrap">
+                  <span className="pill-title">24/7 AI Helper Bot</span>
+                  <span className="pill-desc">@mark03168_bot နှင့် စကားပြောရန်</span>
+                </div>
+              </a>
             </div>
           </div>
         </section>
@@ -333,6 +370,13 @@ function ShopContent({ theme, toggleTheme }) {
           onSearchChange={setSearch}
           stockFilter={stockFilter}
           onStockFilterChange={setStockFilter}
+          categories={categories}
+          selectedCategory={selectedCategory}
+          onSelectCategory={setSelectedCategory}
+        />
+
+        {/* Category Chips Carousel */}
+        <CategoryChips
           categories={categories}
           selectedCategory={selectedCategory}
           onSelectCategory={setSelectedCategory}
@@ -354,10 +398,11 @@ function ShopContent({ theme, toggleTheme }) {
           </div>
         ) : filteredProducts.length > 0 ? (
           <div className="products-grid" key={selectedCategory || 'all'}>
-            {filteredProducts.map((p) => (
+            {filteredProducts.map((p, index) => (
               <ProductCard
                 key={p.id}
                 product={p}
+                style={{ animationDelay: `${Math.min(index * 0.035, 0.35)}s` }}
                 onClick={() => handleOpenProduct(p)}
               />
             ))}

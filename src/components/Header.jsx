@@ -11,6 +11,8 @@ export default function Header({ theme = 'light', toggleTheme }) {
   const { totalItems, setIsCartOpen } = useCart()
   const { wishlistCount, setIsWishlistOpen } = useWishlist()
 
+  const logoSrc = theme === 'dark' ? '/logo-dark.png' : '/logo.png'
+
   return (
     <header className="app-header">
       <div className="header-inner">
@@ -19,9 +21,14 @@ export default function Header({ theme = 'light', toggleTheme }) {
           <div className="brand-group">
             <div className="brand-logo-wrap">
               <img
-                src="/logo.png"
+                src={logoSrc}
                 alt="Shop with NgrSine"
                 className="brand-logo-img"
+                onError={(e) => {
+                  if (e.target.src.indexOf('logo-dark.png') !== -1) {
+                    e.target.src = '/logo.png'
+                  }
+                }}
               />
             </div>
             <div className="brand-texts">

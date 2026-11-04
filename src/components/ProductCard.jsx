@@ -9,7 +9,7 @@ import {
   HeartIcon
 } from './Icons.jsx'
 
-export default function ProductCard({ product: p, onClick }) {
+export default function ProductCard({ product: p, onClick, style }) {
   const [imgError, setImgError] = useState(false)
   const { isWishlisted, toggleWishlist } = useWishlist()
   const wishlisted = isWishlisted(p.id)
@@ -22,7 +22,7 @@ export default function ProductCard({ product: p, onClick }) {
   const hasImage = !!thumbSrc && !imgError
 
   return (
-    <div className="product-card" onClick={onClick}>
+    <div className="product-card" style={style} onClick={onClick}>
       {/* Media Image Container */}
       <div className="product-media-wrap">
         {hasImage ? (
