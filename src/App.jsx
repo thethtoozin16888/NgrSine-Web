@@ -70,9 +70,10 @@ function ShopContent({ theme, toggleTheme }) {
   useEffect(() => {
     const loadCatalog = async () => {
       try {
-        let res = await fetch('/data/products.json')
+        const cacheBuster = `?t=${Date.now()}`
+        let res = await fetch(`/data/products.json${cacheBuster}`, { cache: 'no-cache' })
         if (!res.ok) {
-          res = await fetch('/api/shop/products')
+          res = await fetch(`/api/shop/products${cacheBuster}`, { cache: 'no-cache' })
         }
         const data = await res.json()
         if (data.products && data.products.length > 0) {
@@ -85,7 +86,7 @@ function ShopContent({ theme, toggleTheme }) {
         setLoading(false)
       } catch (err) {
         console.warn('Primary catalog fetch failed, trying API fallback:', err)
-        fetch('/api/shop/products')
+        fetch(`/api/shop/products?t=${Date.now()}`, { cache: 'no-cache' })
           .then((r) => r.json())
           .then((data) => {
             if (data.products) {
