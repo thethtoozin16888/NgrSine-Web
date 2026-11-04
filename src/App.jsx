@@ -5,7 +5,6 @@ import { CartProvider } from './context/CartContext.jsx'
 import { WishlistProvider, useWishlist } from './context/WishlistContext.jsx'
 import Header from './components/Header.jsx'
 import FilterBar from './components/FilterBar.jsx'
-import CategoryChips from './components/CategoryChips.jsx'
 import ProductCard from './components/ProductCard.jsx'
 import ProductModal from './components/ProductModal.jsx'
 import CartDrawer from './components/CartDrawer.jsx'
@@ -370,13 +369,6 @@ function ShopContent({ theme, toggleTheme }) {
           onSearchChange={setSearch}
           stockFilter={stockFilter}
           onStockFilterChange={setStockFilter}
-          categories={categories}
-          selectedCategory={selectedCategory}
-          onSelectCategory={setSelectedCategory}
-        />
-
-        {/* Category Chips Carousel */}
-        <CategoryChips
           categories={categories}
           selectedCategory={selectedCategory}
           onSelectCategory={setSelectedCategory}

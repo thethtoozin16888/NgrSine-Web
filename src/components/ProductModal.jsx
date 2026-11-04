@@ -40,13 +40,16 @@ const isVideoUrl = (url) => {
   )
 }
 
-// Robust URL matcher that compares full URL or image filename basename
+// Robust URL matcher that compares full URL, image filename basename, or stem without extension
 const urlsMatch = (u1, u2) => {
   if (!u1 || !u2) return false
   if (u1 === u2) return true
   const b1 = u1.split('?')[0].split('/').pop().toLowerCase()
   const b2 = u2.split('?')[0].split('/').pop().toLowerCase()
-  return !!(b1 && b2 && b1 === b2)
+  if (b1 && b2 && b1 === b2) return true
+  const s1 = b1.replace(/\.[^/.]+$/, '')
+  const s2 = b2.replace(/\.[^/.]+$/, '')
+  return !!(s1 && s2 && s1 === s2)
 }
 
 export default function ProductModal({
@@ -646,8 +649,12 @@ export default function ProductModal({
                   decoding="async"
                   onError={(e) => {
                     const base = currentMediaUrl.split('?')[0].split('/').pop()
-                    if (!currentMediaUrl.startsWith('/data/images/') && base) {
+                    if (!e.target.dataset.triedImages && base) {
+                      e.target.dataset.triedImages = 'true'
                       e.target.src = `/data/images/${base}`
+                    } else if (!e.target.dataset.triedThumbs && base) {
+                      e.target.dataset.triedThumbs = 'true'
+                      e.target.src = `/data/thumbs/${base}`
                     } else {
                       setFailedUrls((prev) => ({ ...prev, [currentMediaUrl]: true }))
                     }
@@ -716,8 +723,12 @@ export default function ProductModal({
                       loading="lazy"
                       onError={(e) => {
                         const base = m.url.split('?')[0].split('/').pop()
-                        if (!m.url.startsWith('/data/images/') && base) {
+                        if (!e.target.dataset.triedImages && base) {
+                          e.target.dataset.triedImages = 'true'
                           e.target.src = `/data/images/${base}`
+                        } else if (!e.target.dataset.triedThumbs && base) {
+                          e.target.dataset.triedThumbs = 'true'
+                          e.target.src = `/data/thumbs/${base}`
                         } else {
                           e.target.style.display = 'none'
                           if (e.target.parentNode && !e.target.parentNode.querySelector('.modal-thumb-broken')) {
