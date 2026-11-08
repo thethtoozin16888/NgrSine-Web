@@ -9,3 +9,10 @@ dist-ssr
 *.bak.*
 __pycache__/
 *.pyc
+
+# Ignore large media and duplicate folders
+public/data/images/
+public/data/**/*.mp4
+public/data/**/*.mov
+*.mp4
+*.mov
