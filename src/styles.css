@@ -5,47 +5,47 @@
 
 :root,
 [data-theme="light"] {
-  /* Warm Milk Cream & Soft Latte Brown Palette (Light Mode) */
+  /* Light Mode: Warm Ivory Atelier & Saddle Bronze */
   --font-sans: 'Plus Jakarta Sans', 'Padauk', 'Noto Sans Myanmar', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-display: 'Plus Jakarta Sans', sans-serif;
 
-  /* Primary: Soft Warm Latte Brown / Mocha */
-  --primary: #8C6239;
-  --primary-hover: #754F2A;
-  --primary-light: rgba(140, 98, 57, 0.09);
-  --primary-gradient: linear-gradient(135deg, #78502B 0%, #8C6239 50%, #A4774B 100%);
-  --primary-bronze: #8C5832;
+  /* Brand Palette: Saddle Bronze & Champagne */
+  --primary: #8A5A2B;
+  --primary-hover: #6E441E;
+  --primary-light: rgba(138, 90, 43, 0.1);
+  --primary-gradient: linear-gradient(135deg, #6E441E 0%, #8A5A2B 52%, #AD7946 100%);
+  --primary-bronze: #8A5A2B;
 
-  /* Accent: Warm Caramel / Hazelnut */
-  --accent: #A67C52;
-  --accent-hover: #916840;
-  --accent-light: rgba(166, 124, 82, 0.12);
-  --accent-gradient: linear-gradient(135deg, #8C6239 0%, #B08968 50%, #C9A683 100%);
+  /* Accent: Warm Champagne Bronze */
+  --accent: #B08354;
+  --accent-hover: #966B40;
+  --accent-light: rgba(176, 131, 84, 0.13);
+  --accent-gradient: linear-gradient(135deg, #8A5A2B 0%, #B08354 50%, #D1A97E 100%);
   --success: #15803D;
   --success-light: rgba(21, 128, 61, 0.12);
   --danger: #DC2626;
 
-  /* Backgrounds: Warm Milk Cream & Custard Alabaster */
-  --bg-page: #FDFBF7;
+  /* Surfaces: Warm Alabaster & Pure Gallery White */
+  --bg-page: #FBF9F5;
   --bg-card: #FFFFFF;
-  --bg-card-glass: rgba(255, 255, 255, 0.94);
-  --bg-header: rgba(253, 251, 247, 0.94);
-  --bg-surface: #F6F1EA;
+  --bg-card-glass: rgba(255, 255, 255, 0.92);
+  --bg-header: rgba(251, 249, 245, 0.88);
+  --bg-surface: #F3ECE2;
 
   /* Hero & Editorial Sections */
-  --hero-gradient: linear-gradient(135deg, #FFFFFF 0%, #FAF6F0 45%, #F4EDE4 100%);
-  --hero-text: #1F1A16;
-  --hero-subtext: #5A4E45;
+  --hero-gradient: linear-gradient(135deg, #FFFFFF 0%, #FAF5ED 50%, #F2E9DC 100%);
+  --hero-text: #181411;
+  --hero-subtext: #5C5147;
 
-  /* Text & Typography */
-  --text-main: #1F1A16;
-  --text-muted: #6B6056;
-  --text-light: #9C9186;
+  /* Text & Typography (WCAG AA >= 4.5:1) */
+  --text-main: #181411;
+  --text-muted: #5C5147;
+  --text-light: #8C8074;
   --text-white: #FFFFFF;
 
   /* Borders */
-  --border-color: rgba(140, 98, 57, 0.14);
-  --border-light: rgba(140, 98, 57, 0.07);
+  --border-color: rgba(138, 90, 43, 0.14);
+  --border-light: rgba(138, 90, 43, 0.08);
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -54,56 +54,59 @@
   --radius-full: 9999px;
 
   /* Warm Elevation Shadows */
-  --shadow-sm: 0 2px 8px rgba(100, 75, 50, 0.04);
-  --shadow-md: 0 8px 24px -4px rgba(100, 75, 50, 0.08), 0 2px 6px -1px rgba(100, 75, 50, 0.03);
-  --shadow-lg: 0 18px 40px -6px rgba(140, 98, 57, 0.12), 0 6px 14px -2px rgba(100, 75, 50, 0.05);
-  --shadow-xl: 0 28px 60px -10px rgba(140, 98, 57, 0.18);
+  --shadow-sm: 0 2px 8px rgba(82, 54, 28, 0.04);
+  --shadow-md: 0 10px 26px -6px rgba(82, 54, 28, 0.08), 0 2px 6px -1px rgba(82, 54, 28, 0.03);
+  --shadow-lg: 0 20px 44px -8px rgba(138, 90, 43, 0.13), 0 6px 14px -2px rgba(82, 54, 28, 0.05);
+  --shadow-xl: 0 30px 64px -12px rgba(138, 90, 43, 0.18);
 
-  --transition-fast: 0.15s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-normal: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Motion Choreography Curves */
+  --ease-atelier: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-fast: 0.18s var(--ease-atelier);
+  --transition-normal: 0.32s var(--ease-atelier);
 }
 
 [data-theme="dark"] {
-  /* Dark Mode: Deep Espresso Velvet & Radiant Golden Milk-Cream */
+  /* Dark Mode: Obsidian Espresso & Champagne Gold */
   --font-sans: 'Plus Jakarta Sans', 'Padauk', 'Noto Sans Myanmar', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-display: 'Plus Jakarta Sans', sans-serif;
 
-  --primary: #DDB892;
-  --primary-hover: #EED8C1;
-  --primary-light: rgba(221, 184, 146, 0.15);
-  --primary-gradient: linear-gradient(135deg, #B58A5E 0%, #DDB892 50%, #EED8C1 100%);
+  --primary: #E2BC93;
+  --primary-hover: #F3DAC0;
+  --primary-light: rgba(226, 188, 147, 0.16);
+  --primary-gradient: linear-gradient(135deg, #B88B5D 0%, #E2BC93 52%, #F3DAC0 100%);
   --primary-bronze: #E0B086;
 
-  --accent: #C9A683;
-  --accent-hover: #DCB997;
-  --accent-light: rgba(201, 166, 131, 0.18);
-  --accent-gradient: linear-gradient(135deg, #A47B50 0%, #C9A683 100%);
+  --accent: #CFA87E;
+  --accent-hover: #E5C29B;
+  --accent-light: rgba(207, 168, 126, 0.18);
+  --accent-gradient: linear-gradient(135deg, #9F7448 0%, #CFA87E 100%);
   --success: #22C55E;
-  --success-light: rgba(34, 197, 94, 0.15);
+  --success-light: rgba(34, 197, 94, 0.16);
   --danger: #EF4444;
 
-  --bg-page: #14110E;
-  --bg-card: #1D1814;
-  --bg-card-glass: rgba(29, 24, 20, 0.92);
-  --bg-header: rgba(20, 17, 14, 0.94);
-  --bg-surface: #27211B;
+  --bg-page: #100E0C;
+  --bg-card: #191512;
+  --bg-card-glass: rgba(25, 21, 18, 0.88);
+  --bg-header: rgba(16, 14, 12, 0.88);
+  --bg-surface: #241E19;
 
-  --hero-gradient: linear-gradient(135deg, #1D1814 0%, #27211B 50%, #17130F 100%);
-  --hero-text: #FAF6F0;
-  --hero-subtext: #B5A89B;
+  --hero-gradient: linear-gradient(135deg, #191512 0%, #241E19 52%, #14110E 100%);
+  --hero-text: #F9F5EF;
+  --hero-subtext: #B4A799;
 
-  --text-main: #FAF6F0;
-  --text-muted: #B5A89B;
+  --text-main: #F9F5EF;
+  --text-muted: #B4A799;
   --text-light: #7E7266;
   --text-white: #FFFFFF;
 
-  --border-color: rgba(221, 184, 146, 0.12);
-  --border-light: rgba(221, 184, 146, 0.06);
+  --border-color: rgba(226, 188, 147, 0.14);
+  --border-light: rgba(226, 188, 147, 0.07);
 
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
-  --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.65);
-  --shadow-lg: 0 18px 40px -6px rgba(0, 0, 0, 0.75);
-  --shadow-xl: 0 28px 60px -10px rgba(0, 0, 0, 0.85);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.52);
+  --shadow-md: 0 10px 28px -4px rgba(0, 0, 0, 0.68);
+  --shadow-lg: 0 20px 44px -6px rgba(0, 0, 0, 0.78);
+  --shadow-xl: 0 30px 64px -10px rgba(0, 0, 0, 0.88);
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -5859,3 +5862,333 @@ button, input, select, textarea {
   border-color: rgba(239, 68, 68, 0.5);
 }
 
+
+/* ══════════════════════════════════════════════════════════════════════════
+   NgrSine Atelier Redesign — Color Theory, Brand Polish & Motion Choreography
+   (GPU-only transform/opacity animations + WCAG AA contrast + Reduced Motion)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* 1. Ambient Background Drift (Subtle depth without distraction) */
+@keyframes atelierBlobFloat {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(18px, -14px, 0) scale(1.04);
+  }
+}
+
+.liquid-glass-blob {
+  will-change: transform;
+  animation: atelierBlobFloat 20s ease-in-out infinite;
+}
+
+.liquid-glass-blob.blob-2 {
+  animation-duration: 24s;
+  animation-delay: -6s;
+}
+
+.liquid-glass-blob.blob-3 {
+  animation-duration: 28s;
+  animation-delay: -12s;
+}
+
+/* 2. Editorial Hero Entrance Choreography & Live Pulse */
+@keyframes atelierHeroReveal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes atelierLivePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.45);
+    opacity: 0.45;
+  }
+}
+
+.store-hero-banner {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border-color) !important;
+  background: var(--hero-gradient) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.hero-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary-light);
+  border: 1px solid var(--border-color);
+  color: var(--primary);
+  animation: atelierHeroReveal 0.5s var(--ease-atelier) both;
+}
+
+.hero-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 0 3px var(--success-light);
+  animation: atelierLivePulse 2.2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.hero-brand-title {
+  letter-spacing: -0.025em;
+  animation: atelierHeroReveal 0.55s var(--ease-atelier) 0.06s both;
+}
+
+.hero-title-accent {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-brand-tagline {
+  animation: atelierHeroReveal 0.55s var(--ease-atelier) 0.12s both;
+}
+
+.hero-subtext {
+  animation: atelierHeroReveal 0.55s var(--ease-atelier) 0.18s both;
+}
+
+.hero-badge-pill {
+  transition: transform 0.28s var(--ease-atelier), border-color 0.28s var(--ease-atelier), box-shadow 0.28s var(--ease-atelier) !important;
+  animation: atelierHeroReveal 0.55s var(--ease-atelier) 0.2s both;
+}
+
+.hero-badge-pill:nth-child(2) {
+  animation-delay: 0.26s;
+}
+
+.hero-badge-pill:nth-child(3) {
+  animation-delay: 0.32s;
+}
+
+.hero-badge-pill:hover {
+  transform: translate3d(0, -3px, 0);
+  border-color: var(--primary) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.hero-badge-pill .pill-icon-wrap {
+  transition: transform 0.28s var(--ease-spring), background-color 0.28s var(--ease-atelier);
+}
+
+.hero-badge-pill:hover .pill-icon-wrap {
+  transform: scale(1.08);
+}
+
+/* 3. Header & Micro-Interaction Polish (44px+ touch targets) */
+.app-header {
+  background: var(--bg-header) !important;
+  backdrop-filter: blur(20px) saturate(165%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(165%) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.header-btn,
+.theme-toggle-btn {
+  min-height: 42px;
+  transition: transform 0.22s var(--ease-atelier), border-color 0.22s var(--ease-atelier), box-shadow 0.22s var(--ease-atelier), background-color 0.22s var(--ease-atelier) !important;
+}
+
+.header-btn:hover,
+.theme-toggle-btn:hover {
+  transform: translate3d(0, -1px, 0);
+  border-color: var(--primary) !important;
+}
+
+.header-btn:active,
+.theme-toggle-btn:active {
+  transform: scale(0.97);
+}
+
+@keyframes atelierBadgePop {
+  0% { transform: scale(0.72); }
+  65% { transform: scale(1.14); }
+  100% { transform: scale(1); }
+}
+
+.cart-badge,
+.wishlist-badge {
+  font-variant-numeric: tabular-nums;
+  animation: atelierBadgePop 0.32s var(--ease-spring);
+}
+
+/* 4. FilterBar Focus Ring & Sticky Frosted Surface */
+.filter-bar-sticky {
+  border: 1px solid var(--border-color) !important;
+  transition: box-shadow 0.28s var(--ease-atelier), border-color 0.28s var(--ease-atelier);
+}
+
+.search-input-wrap:focus-within,
+.search-input:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px var(--primary-light) !important;
+}
+
+/* 5. Product Card Atelier Hover, Specular Sweep & Tabular Pricing */
+@keyframes atelierCardEnter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.product-card {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: transform 0.34s var(--ease-atelier), box-shadow 0.34s var(--ease-atelier), border-color 0.34s var(--ease-atelier) !important;
+  animation: atelierCardEnter 0.45s var(--ease-atelier) backwards;
+}
+
+.product-card:hover {
+  transform: translate3d(0, -5px, 0) !important;
+  border-color: var(--primary) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.product-media-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-media-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.22) 48%,
+    rgba(255, 255, 255, 0.04) 60%,
+    transparent 75%
+  );
+  transform: translate3d(-120%, 0, 0);
+  transition: transform 0.65s var(--ease-atelier);
+  pointer-events: none;
+  z-index: 2;
+}
+
+[data-theme="dark"] .product-media-wrap::after {
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(226, 188, 147, 0.14) 48%,
+    rgba(226, 188, 147, 0.03) 60%,
+    transparent 75%
+  );
+}
+
+.product-card:hover .product-media-wrap::after {
+  transform: translate3d(120%, 0, 0);
+}
+
+.product-img {
+  transition: transform 0.48s var(--ease-atelier), opacity 0.3s ease !important;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.055);
+}
+
+.card-wishlist-btn {
+  min-width: 38px;
+  min-height: 38px;
+  transition: transform 0.25s var(--ease-spring), background-color 0.22s var(--ease-atelier), color 0.22s var(--ease-atelier) !important;
+}
+
+.card-wishlist-btn:hover {
+  transform: scale(1.1);
+}
+
+.card-wishlist-btn:active,
+.card-wishlist-btn.wishlisted {
+  transform: scale(1.05);
+}
+
+.card-price {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.card-action-btn {
+  min-height: 38px;
+  transition: transform 0.24s var(--ease-atelier), background-color 0.24s var(--ease-atelier), color 0.24s var(--ease-atelier), border-color 0.24s var(--ease-atelier) !important;
+}
+
+.card-action-btn svg {
+  transition: transform 0.24s var(--ease-atelier);
+}
+
+.product-card:hover .card-action-btn {
+  background: var(--primary) !important;
+  color: var(--text-white) !important;
+  border-color: var(--primary) !important;
+}
+
+[data-theme="dark"] .product-card:hover .card-action-btn {
+  color: #181411 !important;
+}
+
+.product-card:hover .card-action-btn svg {
+  transform: translate3d(3px, 0, 0);
+}
+
+/* 6. Recently Viewed & Modal Motion */
+.recent-product-card {
+  transition: transform 0.26s var(--ease-atelier), border-color 0.26s var(--ease-atelier), box-shadow 0.26s var(--ease-atelier) !important;
+}
+
+.recent-product-card:hover {
+  transform: translate3d(0, -3px, 0);
+  border-color: var(--primary) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+/* 7. Accessibility: Respect Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  .liquid-glass-blob,
+  .hero-pill-badge,
+  .hero-live-dot,
+  .hero-brand-title,
+  .hero-brand-tagline,
+  .hero-subtext,
+  .hero-badge-pill,
+  .cart-badge,
+  .wishlist-badge,
+  .product-card {
+    animation: none !important;
+  }
+
+  .product-card,
+  .product-img,
+  .product-media-wrap::after,
+  .hero-badge-pill,
+  .header-btn,
+  .theme-toggle-btn,
+  .card-action-btn,
+  .card-action-btn svg,
+  .card-wishlist-btn,
+  .recent-product-card {
+    transition: none !important;
+  }
+}

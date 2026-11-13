@@ -310,10 +310,13 @@ function ShopContent({ theme, toggleTheme }) {
               </div>
               <div className="hero-brand-texts">
                 <div className="hero-pill-badge">
+                  <span className="hero-live-dot" aria-hidden="true" />
                   <SparklesIcon size={14} className="hero-sparkle-icon" />
                   <span>Official Tech Store • {allProductsCatalog.length || 207}+ Items</span>
                 </div>
-                <h1 className="hero-brand-title">Shop with NgrSine</h1>
+                <h1 className="hero-brand-title">
+                  Shop with <span className="hero-title-accent">NgrSine</span>
+                </h1>
                 <p className="hero-brand-tagline">
                   Gaming Gear, Custom Keyboards & Curated Tech Accessories
                 </p>
